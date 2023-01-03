@@ -1,87 +1,70 @@
-<!DOCTYPE html> 
-<html> 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Login Page </title><script>
-function myFunction(){
-
-//alert(document.getElementById("months-select").value)
-var selectedyear =  document.getElementById("email").value
-var selectedmonth = document.getElementById("pin").value
-
-console.log(selectedmonth)
-  window.parent.postMessage(
-        JSON.stringify({
-            event_code: "ym-client-event",
-            data: ({
-                event: {
-                    code: "data",
-                    data: {
-                        value: [selectedyear,selectedmonth]
-                    },
-                },
-            }),
-        }),
-        "*"
-    );
-
-};
-</script>
-<style> 
-
-Body {
-  font-family: Calibri, Helvetica, sans-serif;
-  background-color: ;
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+<style>
+.rot{
+    padding: 4px;
 }
-button { 
-       background-color: Black; 
-       width: 100%;
-        color: white; 
-        padding: 15px; 
-        margin: 10px 0px; 
-        border: none; 
-        cursor: pointer; 
-         } 
- form { 
-        border: 3px solid #f1f1f1; 
-    } 
- input[type=text], input[type=password] { 
-        width: 100%; 
-        margin: 8px 0;
-        padding: 12px 20px; 
-        display: inline-block; 
-        border: 2px solid green; 
-        box-sizing: border-box; 
-    }
- button:hover { 
-        opacity: 0.7; 
-    } 
-  .cancelbtn { 
-        width: auto; 
-        padding: 10px 18px;
-        margin: 10px 5px;
-    } 
-      
-   
- .container { 
-        padding: 25px; 
-        background-color: ;
-    } 
-</style> 
-</head>  
-<body>  
-    <center> <h3>Login to your Account </h1> </center> 
-Apakah Anda perokok atau pengguna IQOS berusia 18 tahun ke atas? Mohon pastikan informasi yang Anda masukkan benar dan lengkap.   <form>
-        <div class="container"> 
-          <span>  <label>Email : </label> 
-            <input id="email" type="text" placeholder="Enter your email" name="username" required>
-            <span> <label> Pin Access : </label> 
-            <input id="pin" type="password" placeholder=" your PIN" name="password" required>
-            <button type="submit" onclick = "myFunction()">Login </button> </span>
-           <center> <a href="https://neethishk.github.io/resetpass/"> Forgot Password ? </a>
-             </div> 
-    </form>   
-</body>   
-</html>
+.button {
+  background-color: #d1c5c5;
+  border: none;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 100%;
+}
+.button:hover {
+  background-color: white;
+  border: solid #d1c5c5;
+  color: black;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 100%;
+}
 
- 
+/*.button1 {border-radius: 2px;}*/
+/*.button2 {border-radius: 4px;}*/
+/*.button3 {border-radius: 8px;}*/
+/*.button4 {border-radius: 12px;}*/
+/*.button5 {border-radius: 100%;}*/
+</style>
+</head>
+<body>
+<form>
+  <label>Rating:</label><br>
+  <button class="button button5" type="button" value="1">1</button>
+  <button class="button button5" type="button" value="2">2</button>
+  <button class="button button5" type="button" value="3">3</button>
+  <button class="button button5"type="button" value="4">4</button>
+  <button class="button button5" type="button" value="5">😃</button><br><br>
+  <label>NPS Score:</label><br>
+  <button class="button button5" type="button" value="0">0</button>
+  <button class="button button5" type="button" value="1">1</button>
+  <button class="button button5" type="button" value="2">2</button>
+  <button class="button button5" type="button" value="3">3</button>
+  <button class="button button5" type="button" value="4">4</button>
+  <button class="button button5" type="button" value="5">5</button>
+  <button class="button button5" type="button" value="6">6</button>
+  <button class="button button5" type="button" value="7">7</button>
+  <button class="button button5" type="button" value="8">8</button>
+  <button class="button button5" type="button" value="9">9</button>
+  <button class="button button5" type="button" value="10">10</button><br><br>
+  <label>Feedback:</label><br>
+  <textarea rows="4" cols="40"></textarea><br><br>
+  <button type="button" value="10">submit</button>
+</form>
+
+  </body>
+  </html>
