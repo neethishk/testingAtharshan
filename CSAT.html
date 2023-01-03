@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Login Page </title><script>
+function myFunction(){
+
+//alert(document.getElementById("months-select").value)
+var selectedyear =  document.getElementById("email").value
+var selectedmonth = document.getElementById("pin").value
+
+console.log(selectedmonth)
+  window.parent.postMessage(
+        JSON.stringify({
+            event_code: "ym-client-event",
+            data: ({
+                event: {
+                    code: "data",
+                    data: {
+                        value: [selectedyear,selectedmonth]
+                    },
+                },
+            }),
+        }),
+        "*"
+    );
+
+};
+</script>
+<style> 
+
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: ;
+}
+button { 
+       background-color: Black; 
+       width: 100%;
+        color: white; 
+        padding: 15px; 
+        margin: 10px 0px; 
+        border: none; 
+        cursor: pointer; 
+         } 
+ form { 
+        border: 3px solid #f1f1f1; 
+    } 
+ input[type=text], input[type=password] { 
+        width: 100%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px solid green; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+  .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px;
+        margin: 10px 5px;
+    } 
+      
+   
+ .container { 
+        padding: 25px; 
+        background-color: ;
+    } 
+</style> 
+</head>  
+<body>  
+    <center> <h3>Login to your Account </h1> </center> 
+Apakah Anda perokok atau pengguna IQOS berusia 18 tahun ke atas? Mohon pastikan informasi yang Anda masukkan benar dan lengkap.   <form>
+        <div class="container"> 
+          <span>  <label>Email : </label> 
+            <input id="email" type="text" placeholder="Enter your email" name="username" required>
+            <span> <label> Pin Access : </label> 
+            <input id="pin" type="password" placeholder=" your PIN" name="password" required>
+            <button type="submit" onclick = "myFunction()">Login </button> </span>
+           <center> <a href="https://neethishk.github.io/resetpass/"> Forgot Password ? </a>
+             </div> 
+    </form>   
+</body>   
+</html>
+
+ 
